@@ -3,6 +3,10 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  programs = {
+    hyprland.enable = true;
+  }
+
   environment.systemPackages = with pkgs; [
     # desktop apps
     inputs.zen-browser.packages."${system}".default
