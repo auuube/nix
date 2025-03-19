@@ -23,7 +23,7 @@
     gcc
 
     # miscs
-    eog
+    loupe
     hyprshot
     wl-clipboard
   ];
