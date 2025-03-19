@@ -1,0 +1,20 @@
+{
+  imports = [
+    ./boot.nix
+    ./flatpak.nix
+    ./fonts.nix
+    ./hardware.nix
+    ./home-manager.nix
+    ./network.nix
+    ./nh.nix
+    ./nvidia.nix
+    ./packages.nix
+    ./security.nix
+    ./services.nix
+    ./steam.nix
+    ./system.nix
+    ./user.nix
+    ./xdg.nix
+    ./zram.nix
+  ];
+}
