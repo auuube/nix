@@ -14,7 +14,6 @@
     obs-studio
     vesktop
     spotify
-    bottles
     prismlauncher
 
     # cli utils
