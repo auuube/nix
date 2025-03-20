@@ -1,8 +1,21 @@
+{ pkgs, ... }:
+
 {
+  home.packages = with pkgs; [
+    hyprshot
+    wl-clipboard
+    hyprpolkitagent
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
-    # xwayland.enable = true;
+    package = pkgs.hyprland;
+    systemd = {
+      enable = true;
+      enableXdgAutostart = true;
+      variables = ["--all"];
+    };
+    xwayland.enable = true;
 
     settings = {
 
@@ -17,8 +30,8 @@
       #################
 
       exec-once = [
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
+        "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "systemctl --user start hyprpolkitagent"
       ];
       
       #############################

@@ -14,7 +14,6 @@
     ./steam.nix
     ./system.nix
     ./user.nix
-    ./xdg.nix
     ./zram.nix
   ];
 }

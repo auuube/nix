@@ -4,13 +4,17 @@
   nixpkgs.config.allowUnfree = true;
 
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
     # desktop apps
-    inputs.zen-browser.packages."${system}".default
     nautilus
+    loupe
+    inputs.zen-browser.packages."${system}".default
     obs-studio
     vesktop
     spotify
@@ -24,10 +28,5 @@
     tree
     gh
     gcc
-
-    # miscs
-    loupe
-    hyprshot
-    wl-clipboard
   ];
 }
