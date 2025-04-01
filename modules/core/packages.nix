@@ -14,6 +14,7 @@
     # desktop apps
     nautilus
     loupe
+    amberol
     inputs.zen-browser.packages."${system}".default
     obs-studio
     vesktop
