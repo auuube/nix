@@ -10,5 +10,6 @@
     ./starship.nix
     ./stylix.nix
     ./zsh.nix
+    ./zoxide.nix
   ];
 }

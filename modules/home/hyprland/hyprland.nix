@@ -4,17 +4,13 @@
   home.packages = with pkgs; [
     hyprshot
     wl-clipboard
-    hyprpolkitagent
+    mako
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
-    systemd = {
-      enable = true;
-      enableXdgAutostart = true;
-      variables = ["--all"];
-    };
+    systemd.enable = false;
     xwayland.enable = true;
 
     settings = {
@@ -31,7 +27,6 @@
 
       exec-once = [
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "systemctl --user start hyprpolkitagent"
       ];
       
       #############################

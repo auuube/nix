@@ -2,7 +2,7 @@
 
 {
   services = {
-    flatpak.enable = true; # Enable Flatpak
+    flatpak.enable = true; # enable flatpak
   };
   systemd.services.flatpak-repo = {
     wantedBy = ["multi-user.target"];
