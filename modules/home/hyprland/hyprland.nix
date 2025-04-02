@@ -4,14 +4,13 @@
   home.packages = with pkgs; [
     hyprshot
     wl-clipboard
-    mako
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
     systemd.enable = false;
-    xwayland.enable = true;
+    # xwayland.enable = true;
 
     settings = {
 
