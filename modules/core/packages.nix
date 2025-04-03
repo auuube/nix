@@ -26,8 +26,6 @@
     ripgrep
     superfile
     neovim
-    tree
-    gh
     gcc
   ];
 }

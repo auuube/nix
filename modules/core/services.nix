@@ -5,6 +5,7 @@
     gvfs.enable = true; # drive mounting
     openssh.enable = true; # openssh
     blueman.enable = true; # bluetooth
+    gnome.gnome-keyring.enable = true;
 
     pipewire = {
       enable = true;
