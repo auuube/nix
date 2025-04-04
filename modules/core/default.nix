@@ -3,6 +3,7 @@
     ./boot.nix
     ./flatpak.nix
     ./fonts.nix
+    ./greetd.nix
     ./hardware.nix
     ./home-manager.nix
     ./network.nix
