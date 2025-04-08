@@ -14,7 +14,6 @@
     # desktop apps
     nautilus
     loupe
-    amberol
     obs-studio
     vesktop
     spotify
