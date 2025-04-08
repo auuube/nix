@@ -7,6 +7,7 @@
     ./ghostty.nix
     ./git.nix
     ./hyprland
+    ./rofi.nix
     ./starship.nix
     ./stylix.nix
     ./swaync.nix

@@ -15,8 +15,6 @@
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    sherlock.url = "github:skxxtz/sherlock";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -50,3 +48,4 @@
       }) {} hosts;
   };
 }
+

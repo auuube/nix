@@ -21,9 +21,7 @@
     prismlauncher
 
     # flake packages
-    inputs.sherlock.packages."${system}".default
     inputs.zen-browser.packages."${system}".default
-
 
     # cli utils
     fzf

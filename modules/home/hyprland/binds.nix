@@ -7,7 +7,7 @@
 
     "$terminal" = "ghostty";
     "$fileManager" = "nautilus";
-    "$menu" = "sherlock";
+    "$menu" = "rofi -show drun";
     "$browser" = "zen-beta";
 
     ####################
