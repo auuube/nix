@@ -20,10 +20,6 @@
     };
 
     fonts = {
-      emoji = {
-        name = "Noto Color Emoji";
-        package = pkgs.noto-fonts-color-emoji;
-      };
       monospace = {
         name = "JetBrains Mono";
         package = pkgs.jetbrains-mono;
@@ -40,10 +36,8 @@
 
     iconTheme = {
       enable = true;
-      package = pkgs.papirus-icon-theme;
-      dark = "Papirus-Dark";
-      light = "Papirus-Light";
+      package = pkgs.adwaita-icon-theme;
+      dark = "Adwaita";
     };
-
   };
 }

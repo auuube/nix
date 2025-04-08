@@ -28,5 +28,6 @@
     superfile
     neovim
     gcc
+    ffmpeg-full
   ];
 }
