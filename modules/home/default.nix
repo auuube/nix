@@ -9,6 +9,7 @@
     ./gtk.nix
     ./hyprland
     ./rofi.nix
+    ./spicetify.nix
     ./starship.nix
     ./stylix.nix
     ./swaync.nix

@@ -16,7 +16,6 @@
     loupe
     obs-studio
     vesktop
-    spotify
     prismlauncher
 
     # flake packages
