@@ -1,3 +1,5 @@
+{ inputs, ... }:
+
 {
   imports = [
     ./boot.nix
@@ -13,6 +15,8 @@
     ./security.nix
     ./services.nix
     ./steam.nix
+    inputs.stylix.nixosModules.stylix
+    ./stylix.nix
     ./system.nix
     ./user.nix
     ./zram.nix

@@ -6,6 +6,7 @@
     ./gh.nix
     ./ghostty.nix
     ./git.nix
+    ./gtk.nix
     ./hyprland
     ./rofi.nix
     ./starship.nix
