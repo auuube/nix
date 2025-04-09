@@ -11,8 +11,7 @@
         icon-theme = "Papirus";
         font = "JetBrainsMono Nerd Font Mono 12";
         drun-display-format = "{icon} {name}";
-        display-drun = ">_";
-        display-filebrowser = "";
+        display-drun = "";
       };
 
       theme = let
@@ -42,6 +41,10 @@
           spacing = mkLiteral "10px";
         };
 
+        "entry" = {
+            placeholder = "Search Apps";
+        };
+
         "mainbox" = {
           children = [ "inputbar" "listview" "message" ];
           spacing = mkLiteral "10px";
@@ -51,10 +54,14 @@
 
         "element" = {
           spacing = mkLiteral "10px";
-          margin = mkLiteral "8px";
+          margin = mkLiteral "0";
           padding = mkLiteral "8px";
           border = mkLiteral "0px solid";
           border-radius = mkLiteral "8px";
+        };
+
+        "element-icon" = {
+          size = mkLiteral "24px";
         };
       };
     };
