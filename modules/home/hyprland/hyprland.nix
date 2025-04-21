@@ -45,11 +45,11 @@
         gaps_in = 5;
         gaps_out = 8;
 
-        border_size = 0;
+        border_size = 1;
 
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        "col.active_border" = "rgba(33ccffee)"; #rgba(00ff99ee) 0deg
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgb(797979)";
+        "col.inactive_border" = "rgb(595959)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false;

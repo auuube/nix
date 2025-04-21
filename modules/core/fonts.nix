@@ -11,6 +11,14 @@
       font-awesome
       material-icons
     ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans" "Noto Sans Thai" ];
+        monospace = [ "JetBrainsMono Nerd Font" ];
+      };
+    };
   };
 }
 
