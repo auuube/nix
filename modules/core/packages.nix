@@ -14,7 +14,6 @@
     # desktop apps
     nautilus
     loupe
-    obs-studio
     vesktop
     prismlauncher
 
@@ -26,7 +25,10 @@
     ripgrep
     superfile
     neovim
+    lazygit
+
+    # miscs
+    nodejs
     gcc
-    ffmpeg-full
   ];
 }

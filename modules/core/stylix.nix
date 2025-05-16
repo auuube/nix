@@ -12,20 +12,5 @@
       size = 24;
       package = pkgs.vanilla-dmz;
     };
-
-    fonts = {
-      monospace = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
-      };
-      sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
-      };
-      serif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Serif";
-      };
-    };
   };
 }
