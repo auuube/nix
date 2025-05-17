@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -55,14 +55,14 @@
       #####################
 
       general = { 
-        gaps_in = 5;
-        gaps_out = 8;
+        gaps_in = 4;
+        gaps_out = 5;
 
         border_size = 2;
 
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        "col.active_border" = "rgb(797979)";
-        "col.inactive_border" = "rgb(595959)";
+        "col.active_border" = "rgba(${config.stylix.base16Scheme.base02}ee) rgba(${config.stylix.base16Scheme.base01}ee) 45deg";
+        "col.inactive_border" = "rgba(4d5d69aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false;
@@ -79,24 +79,17 @@
 
         # Change transparency of focused and unfocused windows
         active_opacity = 1.0;
-        inactive_opacity = 0.95;
+        inactive_opacity = 0.9;
 
         # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
           enabled = true;
           vibrancy = 0.8;
           contrast = 0.6;
-          size = 10;
+          size = 8;
           passes = 2;
           ignore_opacity = true;
         };
-
-        shadow = {
-          enabled = false;
-          sharp = false;
-        };
-
-        #blurls = gtk-layer-shell
       };
 
       animations = {

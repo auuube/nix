@@ -8,6 +8,7 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
       font-awesome
       material-icons
     ];

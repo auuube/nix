@@ -11,6 +11,6 @@
       beautifulLyrics
       volumePercentage
     ];
-    theme = spicePkgs.themes.blossom;
+    theme = spicePkgs.themes.text;
   };
 }

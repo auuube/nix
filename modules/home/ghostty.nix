@@ -5,9 +5,9 @@
     settings = {
       font-family = "Fira Code";
       font-size = 11;
-      theme = "GitHub Dark";
-      background-opacity = 0.7;
-      background-blur = 20;
+      theme = "Kanagawa Wave";
+      background-opacity = 0.9;
+      background-blur = 30;
       font-thicken = false;
       font-feature = ["ss04" "ss01"];
       bold-is-bright = false;

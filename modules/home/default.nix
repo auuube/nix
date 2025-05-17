@@ -1,6 +1,7 @@
 {
   imports = [
     ./btop.nix
+    ./cava.nix
     ./eza.nix
     ./fastfetch.nix
     ./gh.nix
@@ -10,10 +11,8 @@
     ./hyprland
     ./rofi.nix
     ./spicetify.nix
-    ./starship.nix
     ./stylix.nix
     ./swaync.nix
-    ./zoxide.nix
     ./zsh.nix
   ];
 }
