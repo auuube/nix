@@ -13,6 +13,7 @@
     ./spicetify.nix
     ./stylix.nix
     ./swaync.nix
+    ./waybar.nix
     ./zsh.nix
   ];
 }

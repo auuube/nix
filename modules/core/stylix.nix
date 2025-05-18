@@ -4,7 +4,7 @@
   stylix = {
     enable = true;
 
-    image = ../../wallpapers/ryou.png;
+    image = ../../wallpapers/sky.png;
     polarity = "dark";
 
     cursor = {
