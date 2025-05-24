@@ -21,7 +21,12 @@
         ];
 
         "hyprland/workspaces" = {
-          format = "{name}";
+          format = "{icon}";
+          format-icons = {
+            default = "󰄰";
+            active = "󰄯";
+            urgent = "󰀨";
+          };
           on-scroll-up = "hyprctl dispatch workspace e-1";
           on-scroll-down = "hyprctl dispatch workspace e+1";
         };
@@ -35,8 +40,14 @@
           separate-outputs = false;
         };
         "network" = {
-          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
-          format-ethernet = " {bandwidthDownOctets}";
+          format-icons = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
+          format-ethernet = "󰅀 {bandwidthDownOctets}";
           format-wifi = "{icon} {signalStrength}%";
           format-disconnected = "󰤮";
           tooltip = false;
@@ -48,41 +59,41 @@
           format = "{icon} {volume}% {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";
           format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = " {volume}%";
-          format-source-muted = "";
+          format-muted = "󰍭 {format_source}";
+          format-source = "󰍬 {volume}%";
+          format-source-muted = "󰍭";
           format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
+            headphone = "󰋋";
+            hands-free = "󰋎";
+            headset = "󰋎";
+            phone = "󰏲";
+            portable = "󰏲";
+            car = "󰄋";
             default = [
-              ""
-              ""
-              ""
+              "󰕿"
+              "󰖀"
+              "󰕾"
             ];
           };
           on-click = "sleep 0.1 && pavucontrol";
         };
         "custom/wlogout" = {
           tooltip = false;
-          format = "⏻";
+          format = "󰐥";
           on-click = "sleep 0.1 && wlogout";
         };
         "custom/notification" = {
           tooltip = false;
           format = "{icon} {}";
           format-icons = {
-            notification = "<span foreground='red'><sup></sup></span>";
-            none = "";
-            dnd-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-none = "";
+            notification = "󰂚<span foreground='red'><sup></sup></span>";
+            none = "󰂚";
+            dnd-notification = "󰂜<span foreground='red'><sup></sup></span>";
+            dnd-none = "󰂜";
             inhibited-notification = "<span foreground='red'><sup></sup></span>";
             inhibited-none = "";
-            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "";
+            dnd-inhibited-notification = "󰪑<span foreground='red'><sup></sup></span>";
+            dnd-inhibited-none = "󰪑";
           };
           return-type = "json";
           exec-if = "which swaync-client";
@@ -107,11 +118,11 @@
     style = lib.concatStrings [
       ''
         * {
-          font-family: JetBrainsMono Nerd Font Mono;
+          font-family: JetBrainsMono Nerd Font;
           font-size: 14px;
           border-radius: 0px;
           border: none;
-          min-height: 0px;
+          min-height: 25px;
         }
         window#waybar {
           background: #${config.lib.stylix.colors.base00};

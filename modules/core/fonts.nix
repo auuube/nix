@@ -9,7 +9,7 @@
       noto-fonts-emoji
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
-      font-awesome
+      nerd-fonts.monofur
       material-icons
     ];
 
