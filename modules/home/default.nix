@@ -6,6 +6,7 @@
     ./fastfetch.nix
     ./gh.nix
     ./ghostty.nix
+    ./fish.nix
     ./git.nix
     ./gtk.nix
     ./hyprland
@@ -14,6 +15,5 @@
     ./stylix.nix
     ./swaync.nix
     ./waybar.nix
-    ./zsh.nix
   ];
 }

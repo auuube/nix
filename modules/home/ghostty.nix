@@ -1,7 +1,7 @@
 {
   programs.ghostty = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
     settings = {
       font-family = "Fira Code";
       font-size = 11;

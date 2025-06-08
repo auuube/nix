@@ -17,10 +17,10 @@
   let
     # configs
     system = "x86_64-linux";
-    homeStateVersion = "24.11";
+    homeStateVersion = "25.05";
     user = "aube";
     hosts = [
-      { hostname = "dusk"; stateVersion = "24.11"; }
+      { hostname = "dusk"; stateVersion = "25.05"; }
     ];
 
     # create nixosSystem function
