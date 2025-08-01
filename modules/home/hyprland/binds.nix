@@ -26,7 +26,7 @@
 
       # app launch
       "$mainMod, RETURN, exec, $terminal"
-      "$mainMod, M, exec, $fileManager"
+      "$mainMod, E, exec, $fileManager"
       "$mainMod, B, exec, $browser"
       "$mainMod, SPACE, exec, $menu"
 

@@ -6,6 +6,7 @@
     openssh.enable = true; # openssh
     blueman.enable = true; # bluetooth
     gnome.gnome-keyring.enable = true;
+    hardware.openrgb.enable = true;
 
     pipewire = {
       enable = true;
