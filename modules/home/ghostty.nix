@@ -3,7 +3,6 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
-      font-family = "Fira Code";
       font-size = 11;
       theme = "Kanagawa Wave";
       background-opacity = 0.9;

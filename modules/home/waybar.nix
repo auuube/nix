@@ -1,179 +1,179 @@
-{ pkgs, lib, config, ... }:
+{ config, ... }:
 
+let
+  colors = config.lib.stylix.colors;
+in
 {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar;
+
+    style = ''
+      * {
+        border: none;
+        border-radius: 0;
+        font-family: "JetBrainsMono NFM";
+        padding: 0;
+        margin: 0;
+        min-width: 10px;
+        background: transparent;
+      }
+
+      window.#waybar {
+        min-width: 40px;
+      }
+
+      tooltip,
+      #tray menu {
+        background: alpha(#${colors.base00}, 0.999);
+        border-radius: 8px;
+        padding: 1px 2px;
+      }
+
+      #custom-separator {
+        font-family: "Material Symbols Rounded";
+        margin: -10px 0;
+        font-size: 28px;
+        color: #${colors.base05};
+      }
+
+      #top,
+      #workspaces,
+      #bottom {
+        background: #${colors.base01};
+        padding: 8px 0;
+        border-radius: 0 16px 16px 0;
+      }
+
+      box.empty {
+        font-size: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      #workspaces {
+        min-width: 0;
+        padding: 8px 14px;
+        margin: 20px 0;
+      }
+
+      #workspaces button {
+        font-size: 7px;
+        color: transparent;
+        background: #${colors.base05};
+        transition: all 0.2s ease-in-out;
+        min-width: 0;
+        min-height: 0;
+        border-radius: 9999px;
+        margin: 3px 0;
+      }
+
+      #workspaces button.active {
+        background: #${colors.base0D};
+        min-height: 40px;
+      }
+
+      #bottom,
+      #top {
+        color: #${colors.base05};
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+
+      #network {
+        margin-bottom: 8px;
+      }
+
+      #bluetooth,
+      #network {
+        font-size: 18px;
+      }
+
+      #bluetooth.battery,
+
+      #bluetooth,
+      #network {
+        font-family: "Material Symbols Rounded";
+      }
+
+      #bluetooth.battery.on {
+        font-size: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      #tray,
+      #network {
+        margin-top: 8px;
+      }
+    '';
+
     settings = [
       {
         layer = "top";
-        position = "top";
-        modules-left = [ "hyprland/window" ];
-        modules-center = [ "hyprland/workspaces" ];
-        modules-right = [
-          "tray"
-          "pulseaudio"
-          "network"
-          "clock"
-          "battery"
-          "custom/wlogout"
-          "custom/notification"
+        position = "left";
+        orientation = "vertical";
+        reload_style_on_change = true;
+        modules-center = [
+          "hyprland/workspaces"
+          "group/bottom"
         ];
 
-        "hyprland/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            default = "󰄰";
-            active = "󰄯";
-            urgent = "󰀨";
-          };
-          on-scroll-up = "hyprctl dispatch workspace e-1";
-          on-scroll-down = "hyprctl dispatch workspace e+1";
-        };
-        "clock" = {
-          format = "{:L%H:%M}";
-          tooltip = true;
-          tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
-        };
-        "hyprland/window" = {
-          max-length = 30;
-          separate-outputs = false;
-        };
-        "network" = {
-          format-icons = [
-            "󰤯"
-            "󰤟"
-            "󰤢"
-            "󰤥"
-            "󰤨"
+        "group/bottom" = {
+          orientation = "inherit";
+          modules = [
+            "tray"
+            "network"
+            "bluetooth"
+            "bluetooth#battery"
+            "custom/separator"
+            "clock"
           ];
-          format-ethernet = "󰅀 {bandwidthDownOctets}";
-          format-wifi = "{icon} {signalStrength}%";
-          format-disconnected = "󰤮";
+        };
+
+        "hyprland/workspaces" = {
+          format = "{id}";
+          all-outputs = true;
+        };
+
+        tray = {
+          icon-size = 21;
+          spacing = 10;
+        };
+
+        network = {
+          format-wifi = "";
+          format-disconnected = "";
+          format-ethernet = "";
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
           tooltip = false;
         };
-        "tray" = {
-          spacing = 12;
-        };
-        "pulseaudio" = {
-          format = "{icon} {volume}% {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = "󰍭 {format_source}";
-          format-source = "󰍬 {volume}%";
-          format-source-muted = "󰍭";
-          format-icons = {
-            headphone = "󰋋";
-            hands-free = "󰋎";
-            headset = "󰋎";
-            phone = "󰏲";
-            portable = "󰏲";
-            car = "󰄋";
-            default = [
-              "󰕿"
-              "󰖀"
-              "󰕾"
-            ];
-          };
-          on-click = "sleep 0.1 && pavucontrol";
-        };
-        "custom/wlogout" = {
+
+        bluetooth = {
+          format-connected = "";
+          format = "";
+          format-off = "";
           tooltip = false;
-          format = "󰐥";
-          on-click = "sleep 0.1 && wlogout";
         };
-        "custom/notification" = {
-          tooltip = false;
-          format = "{icon} {}";
-          format-icons = {
-            notification = "󰂚<span foreground='red'><sup></sup></span>";
-            none = "󰂚";
-            dnd-notification = "󰂜<span foreground='red'><sup></sup></span>";
-            dnd-none = "󰂜";
-            inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            inhibited-none = "";
-            dnd-inhibited-notification = "󰪑<span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "󰪑";
-          };
-          return-type = "json";
-          exec-if = "which swaync-client";
-          exec = "swaync-client -swb";
-          on-click = "sleep 0.1 && swaync-client -t";
-          escape = true;
+
+        "bluetooth#battery" = {
+          format = "";
+          format-connected-battery = "{device_battery_percentage}";
         };
-        "battery" = {
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{icon} {capacity}%";
-          format-charging = "󰂄 {capacity}%";
-          format-plugged = "󱘖 {capacity}%";
-          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          on-click = "";
+
+        "custom/separator" = {
+          format = "";
           tooltip = false;
+        };
+
+        clock = {
+          format = "{:%H\n%M}";
+          tooltip-format = "{:%a %b %d, %Y}";
         };
       }
     ];
-    style = lib.concatStrings [
-      ''
-        * {
-          font-family: JetBrainsMono Nerd Font;
-          font-size: 14px;
-          border-radius: 0px;
-          border: none;
-          min-height: 25px;
-        }
-        window#waybar {
-          background: #${config.lib.stylix.colors.base00};
-          color: #${config.lib.stylix.colors.base05};
-        }
-        #workspaces button {
-          padding: 0px 5px;
-          background: transparent;
-          color: #${config.lib.stylix.colors.base04};
-        }
-        #workspaces button.active {
-          color: #${config.lib.stylix.colors.base08};
-        }
-        #workspaces button:hover {
-          color: #${config.lib.stylix.colors.base08};
-        }
-        tooltip {
-          background: #${config.lib.stylix.colors.base00};
-          border: 1px solid #${config.lib.stylix.colors.base05};
-          border-radius: 12px;
-        }
-        tooltip label {
-          color: #${config.lib.stylix.colors.base05};
-        }
-        #window {
-          padding: 0px 10px;
-        }
-        #pulseaudio {
-          padding: 0px 10px;
-          background: #${config.lib.stylix.colors.base04};
-          color: #${config.lib.stylix.colors.base00};
-        }
-        #network, #battery,
-        #custom-notification, #custom-wlogout {
-          background: #${config.lib.stylix.colors.base0F};
-          color: #${config.lib.stylix.colors.base00};
-          padding: 0px 10px;
-        }
-        #tray {
-          background: #${config.lib.stylix.colors.base02};
-          color: #${config.lib.stylix.colors.base00};
-          padding: 0px 10px;
-        }
-        #clock {
-          font-weight: bold;
-          padding: 0px 10px;
-          color: #${config.lib.stylix.colors.base00};
-          background: #${config.lib.stylix.colors.base0E};
-        }
-      ''
-    ];
   };
 }
-

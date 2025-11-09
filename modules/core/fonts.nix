@@ -6,20 +6,24 @@
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.monofur
       material-icons
+      material-symbols
     ];
 
+    # fallback fonts for stylix
     fontconfig = {
       defaultFonts = {
         serif = [ "Noto Serif" ];
-        sansSerif = [ "Noto Sans" "Noto Sans Thai" ];
+        sansSerif = [
+          "Noto Sans"
+          "Noto Sans Thai"
+        ];
         monospace = [ "JetBrainsMono Nerd Font" ];
       };
     };
   };
 }
-

@@ -1,4 +1,4 @@
-{ pkgs, inputs, system, ... }:
+{ pkgs, inputs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -12,13 +12,14 @@
 
   environment.systemPackages = with pkgs; [
     # desktop apps
+    vicinae
     nautilus
     loupe
     vesktop
     prismlauncher
 
     # flake packages
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # cli utils
     fzf
@@ -28,7 +29,10 @@
     lazygit
 
     # miscs
+    jre25_minimal
     nodejs
+    nixd
+    nil
     gcc
   ];
 }

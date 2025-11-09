@@ -7,8 +7,8 @@
 
     "$terminal" = "ghostty";
     "$fileManager" = "nautilus";
-    "$menu" = "rofi -show drun";
-    "$browser" = "zen-beta";
+    "$menu" = "vicinae toggle";
+    "$browser" = "zen";
 
     ####################
     ### KEY BINDINGS ###

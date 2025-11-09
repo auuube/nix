@@ -5,7 +5,6 @@
     hyprshot
     wl-clipboard
     pavucontrol
-    wlogout
   ];
 
   wayland.windowManager.hyprland = {
@@ -15,7 +14,7 @@
     systemd = {
       enable = true;
       enableXdgAutostart = true;
-      variables = ["--all"];
+      variables = [ "--all" ];
     };
 
     settings = {
@@ -34,12 +33,13 @@
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "waybar"
+        "vicinae server"
       ];
-      
+
       #############################
       ### ENVIRONMENT VARIABLES ###
       #############################
-      
+
       env = [
         "XDG_CURRENT_DESKTOP, Hyprland"
         "XDG_SESSION_TYPE, wayland"
@@ -51,20 +51,22 @@
         "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
         "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
         "QT_SCALE_FACTOR,1"
+        "USE_LAYER_SHELL,0"
       ];
 
       #####################
       ### LOOK AND FEEL ###
       #####################
 
-      general = { 
+      general = {
         gaps_in = 4;
         gaps_out = 5;
 
         border_size = 2;
 
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        "col.active_border" = "rgba(${config.stylix.base16Scheme.base02}ee) rgba(${config.stylix.base16Scheme.base01}ee) 45deg";
+        "col.active_border" =
+          "rgba(${config.stylix.base16Scheme.base02}ee) rgba(${config.stylix.base16Scheme.base01}ee) 45deg";
         "col.inactive_border" = "rgba(4d5d69aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
@@ -74,7 +76,7 @@
         allow_tearing = false;
 
         layout = "dwindle";
-        };
+      };
 
       decoration = {
 
@@ -97,7 +99,7 @@
 
       animations = {
         enabled = true;
-        
+
         # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
         bezier = [
@@ -144,7 +146,7 @@
       };
 
       # https://wiki.hyprland.org/Configuring/Variables/#misc
-      misc = { 
+      misc = {
         force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo = true;
       };
@@ -160,11 +162,6 @@
         follow_mouse = 1;
         sensitivity = 0; # 0 means no modification.
         accel_profile = "flat";
-      };
-
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
-      gestures = {
-        workspace_swipe = false;
       };
 
       ##############################

@@ -1,4 +1,4 @@
-{ inputs, system, homeStateVersion, user, ... }:
+{ inputs, homeStateVersion, user, ... }:
 
 {
   # home-manager nixos module
@@ -7,7 +7,7 @@
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs user system; };
+    extraSpecialArgs = { inherit inputs user; };
     users.${user} = {
       imports = [ ../home ];
       home = {

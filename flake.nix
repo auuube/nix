@@ -29,7 +29,7 @@
     makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
       system = system;
       specialArgs = {
-        inherit inputs stateVersion homeStateVersion system hostname user;
+        inherit inputs stateVersion homeStateVersion hostname user;
       };
 
       modules = [

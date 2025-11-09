@@ -10,10 +10,10 @@
     ./git.nix
     ./gtk.nix
     ./hyprland
-    ./rofi.nix
     ./spicetify.nix
     ./stylix.nix
     ./swaync.nix
     ./waybar.nix
+    ./zed.nix
   ];
 }
