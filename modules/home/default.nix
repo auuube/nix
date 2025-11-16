@@ -4,14 +4,13 @@
     ./cava.nix
     ./eza.nix
     ./fastfetch.nix
+    ./fish.nix
     ./gh.nix
     ./ghostty.nix
-    ./fish.nix
     ./git.nix
     ./gtk.nix
     ./hyprland
     ./spicetify.nix
-    ./stylix.nix
     ./swaync.nix
     ./waybar.nix
     ./zed.nix

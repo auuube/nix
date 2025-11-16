@@ -4,21 +4,21 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
+      inter
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
-      nerd-fonts.monofur
       material-icons
       material-symbols
     ];
 
-    # fallback fonts for stylix
     fontconfig = {
       defaultFonts = {
         serif = [ "Noto Serif" ];
         sansSerif = [
+          "Inter"
           "Noto Sans"
           "Noto Sans Thai"
         ];

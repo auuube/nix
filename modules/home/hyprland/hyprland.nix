@@ -19,6 +19,8 @@
 
     settings = {
 
+      "source" = "colors.conf"; # source matugen colors
+
       ################
       ### MONITORS ###
       ################
@@ -32,6 +34,7 @@
       exec-once = [
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "awww-daemon"
         "waybar"
         "vicinae server"
       ];
@@ -65,8 +68,7 @@
         border_size = 2;
 
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        "col.active_border" =
-          "rgba(${config.stylix.base16Scheme.base02}ee) rgba(${config.stylix.base16Scheme.base01}ee) 45deg";
+        "col.active_border" = "$primary $secondary 45deg";
         "col.inactive_border" = "rgba(4d5d69aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps

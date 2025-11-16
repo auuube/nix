@@ -15,11 +15,9 @@
     ./security.nix
     ./services.nix
     ./steam.nix
-    ./stylix.nix
     ./system.nix
     ./user.nix
     ./zram.nix
-    inputs.stylix.nixosModules.stylix
     inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 }

@@ -3,6 +3,7 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
+      theme = "Matugen";
       font-size = 11;
       background-opacity = 0.8;
       background-blur = 30;

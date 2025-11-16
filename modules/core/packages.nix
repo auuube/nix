@@ -19,7 +19,9 @@
     prismlauncher
 
     # flake packages
-    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+    inputs.matugen.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # cli utils
     fzf

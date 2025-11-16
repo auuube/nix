@@ -10,7 +10,8 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/";
-    stylix.url = "github:danth/stylix";
+    awww.url = "git+https://codeberg.org/LGFae/awww";
+    matugen.url = "github:/InioX/Matugen";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
