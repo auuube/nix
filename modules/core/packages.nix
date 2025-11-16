@@ -27,6 +27,7 @@
     superfile
     neovim
     lazygit
+    nitch
 
     # miscs
     jre25_minimal

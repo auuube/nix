@@ -15,35 +15,54 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
-  let
-    # configs
-    system = "x86_64-linux";
-    homeStateVersion = "25.05";
-    user = "aube";
-    hosts = [
-      { hostname = "dusk"; stateVersion = "25.05"; }
-    ];
-
-    # create nixosSystem function
-    makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
-      system = system;
-      specialArgs = {
-        inherit inputs stateVersion homeStateVersion hostname user;
-      };
-
-      modules = [
-        ./hosts/${hostname}
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
+      # configs
+      system = "x86_64-linux";
+      homeStateVersion = "25.05";
+      user = "aube";
+      hosts = [
+        {
+          hostname = "dusk";
+          stateVersion = "25.05";
+        }
       ];
-    };
-  in
-  {
-    nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
-      configs // {
-        "${host.hostname}" = makeSystem {
-          inherit (host) hostname stateVersion;
-        };
-      }) {} hosts;
-  };
-}
 
+      # create nixosSystem function
+      makeSystem =
+        { hostname, stateVersion }:
+        nixpkgs.lib.nixosSystem {
+          system = system;
+          specialArgs = {
+            inherit
+              inputs
+              stateVersion
+              homeStateVersion
+              hostname
+              user
+              ;
+          };
+
+          modules = [
+            ./hosts/${hostname}
+          ];
+        };
+    in
+    {
+      nixosConfigurations = nixpkgs.lib.foldl' (
+        configs: host:
+        configs
+        // {
+          "${host.hostname}" = makeSystem {
+            inherit (host) hostname stateVersion;
+          };
+        }
+      ) { } hosts;
+    };
+}

@@ -4,11 +4,9 @@
     enableFishIntegration = true;
     settings = {
       font-size = 11;
-      theme = "Kanagawa Wave";
-      background-opacity = 0.9;
+      background-opacity = 0.8;
       background-blur = 30;
       font-thicken = false;
-      font-feature = ["ss04" "ss01"];
       bold-is-bright = false;
       adjust-box-thickness = 1;
       cursor-style = "bar";
@@ -25,4 +23,3 @@
     };
   };
 }
-
