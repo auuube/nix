@@ -11,19 +11,12 @@
 
     shellAbbrs = {
       v = "nvim";
-      c = "clear";  
+      c = "clear";
 
       # nh
       sw = "nh os switch";
       upd = "nh os switch --update";
     };
-
-    plugins = [
-      { 
-        name = "tide";
-        src = pkgs.fishPlugins.tide.src;
-      }
-    ];
 
     interactiveShellInit = ''
       set -g fish_greeting

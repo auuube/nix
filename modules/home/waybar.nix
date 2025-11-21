@@ -22,10 +22,8 @@
         padding: 1px 2px;
       }
       #custom-separator {
-        font-family: "Material Symbols Rounded";
         margin: -10px 0;
         font-size: 28px;
-        color: @on_surface;
       }
       #top,
       #workspaces,

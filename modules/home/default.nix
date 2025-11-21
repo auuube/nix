@@ -11,6 +11,7 @@
     ./gtk.nix
     ./hyprland
     ./spicetify.nix
+    ./starship.nix
     ./swaync.nix
     ./waybar.nix
     ./zed.nix
